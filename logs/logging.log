@@ -273,3 +273,13 @@ Source-Age: 0
 [2025-06-22 21:47:07,546: INFO: main: >>>> stage 'Model Evaluation Stage' completed <<<<
 
 ]
+[2025-06-22 22:09:57,626: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.10.193:8080]
+[2025-06-22 22:09:57,628: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-06-22 22:10:02,058: INFO: _internal: 127.0.0.1 - - [22/Jun/2025 22:10:02] "GET / HTTP/1.1" 200 -]
+[2025-06-22 22:10:02,226: INFO: _internal: 127.0.0.1 - - [22/Jun/2025 22:10:02] "[33mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 404 -]
+[2025-06-22 22:10:02,279: INFO: _internal: 127.0.0.1 - - [22/Jun/2025 22:10:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-06-22 22:10:28,049: INFO: _internal: 127.0.0.1 - - [22/Jun/2025 22:10:28] "POST /predict HTTP/1.1" 200 -]
+[2025-06-22 22:10:28,052: INFO: _internal: 127.0.0.1 - - [22/Jun/2025 22:10:28] "POST /predict HTTP/1.1" 200 -]
