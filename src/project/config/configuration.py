@@ -1,6 +1,7 @@
 from src.project.constants import *
 from src.project.utils.common import read_yaml, create_directories
-from src.project.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig)
+from src.project.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig)
+import os
 
 class ConfigurationManager:
     def __init__(self,
@@ -72,3 +73,22 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        schema = self.schema.TARGET_COLUMN
+        params = self.params.ElasticNet
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metrics_file_name=config.metrics_file_name,
+            params=params,
+            target_column=schema.name,
+            mlflow_uri=os.getenv("MLFLOW_TRACKING_URI")
+        )
+
+        return model_evaluation_config
